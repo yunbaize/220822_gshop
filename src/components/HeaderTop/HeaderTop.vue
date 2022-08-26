@@ -6,7 +6,7 @@
             <span class="header_title_text">{{title}}</span>
         </a>
 
-        <slot id="left"></slot>
+        <slot name="right"></slot>
     </header>
 </template>
 

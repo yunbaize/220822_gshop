@@ -7,8 +7,13 @@
           <i class="iconfont icon-sousuo"></i>
         </router-link>
 
-        <router-link slot="right" to="/login" class="header_login">
-          <span class="header_login_text">登录|注册</span>
+        <router-link slot="right"  class="header_login" :to="userInfo._id ? '/userinfo': '/login'">
+          <span class="header_login_text" v-if="!userInfo._id">
+            登录|注册
+          </span>
+          <span class="header_login_text" v-else>
+            <i class="iconfont icon-person"></i>
+          </span>
         </router-link>
       </HeaderTop>
 
@@ -62,7 +67,7 @@
 
     },
     computed:{
-      ...mapState(['address','categorys']),
+      ...mapState(['address','categorys','userInfo']),
 
       /* 
       根据categorys一维数组生成一个2维数组
