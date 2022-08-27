@@ -5,6 +5,7 @@
         <i class="iconfont icon-arrow_left"></i>
       </a>
     </nav>
+
     <div class="shop-content" @click="toggleShopShow">
       <img class="content-image" :src="info.avatar">
       <div class="header-content">
@@ -41,6 +42,7 @@
       </div>
     </div>
 
+    <!-- 商家详细信息 -->
     <transition name="fade">
       <div class="shop-brief-modal" v-show="shopShow">
         <div class="brief-modal-content">
@@ -86,6 +88,7 @@
       </div>
     </transition>
 
+    <!-- 优惠详情 -->
     <transition name="fade">
       <div class="activity-sheet" v-show="supportShow">
         <div class="activity-sheet-content">
@@ -99,6 +102,7 @@
               <span class="activity-content">{{support.content}}</span>
             </li>
           </ul>
+          <!-- 关闭优惠详情提示页 -->
           <div class="activity-sheet-close" @click="toggleSupportShow">
             <span class="iconfont icon-close"></span>
           </div>
@@ -125,10 +129,11 @@
     },
 
     methods: {
+      // 切换展示商家详细信息
       toggleShopShow () {
         this.shopShow = !this.shopShow
       },
-
+      // 切换展示优惠详情 
       toggleSupportShow () {
         this.supportShow = !this.supportShow
       }

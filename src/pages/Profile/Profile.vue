@@ -3,6 +3,7 @@
     <HeaderTop title="我的"/>
 
     <section class="profile-number">
+      <!-- 未登录会跳转到登录页面，已经登陆会跳转到userinfo页面（一个空页面） -->
       <router-link :to="userInfo._id ? '/userinfo': '/login'" class="profile-link">
         <div class="profile_image">
           <i class="iconfont icon-person"></i>
@@ -112,6 +113,7 @@
     computed: {
       ...mapState(['userInfo'])
     },
+
     methods: {
       logout () {
         MessageBox.confirm('确认退出吗?').then(

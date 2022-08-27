@@ -13,6 +13,7 @@
           </li>
         </ul>
       </div>
+
       <div class="foods-wrapper">
         <ul ref="foodsUl">
           <li class="food-list-hook" v-for="(good, index) in goods" :key="index">
@@ -45,6 +46,7 @@
       </div>
       <ShopCart />
     </div>
+    
     <Food :food="food" ref="food"/>
   </div>
 </template>

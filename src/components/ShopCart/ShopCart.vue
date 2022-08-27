@@ -12,12 +12,14 @@
           <div class="price" :class="{highlight: totalCount}">￥{{totalPrice}}</div>
           <div class="desc">另需配送费￥{{info.deliveryPrice}}元</div>
         </div>
+
         <div class="content-right">
           <div class="pay" :class="payClass">
             {{payText}}
           </div>
         </div>
       </div>
+      
       <transition name="move">
         <div class="shopcart-list" v-show="listShow">
           <div class="list-header">

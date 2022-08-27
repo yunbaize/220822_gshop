@@ -7,6 +7,7 @@
         <i class="iconfont icon-sousuo"></i>
       </router-link>
       
+      <!-- 未登录会跳转到登录页面，已经登陆会跳转到userinfo页面（一个空页面） -->
       <router-link class="header_login" slot="right" :to="userInfo._id ? '/userinfo': '/login'">
         <span class="header_login_text" v-if="!userInfo._id">
           登录|注册

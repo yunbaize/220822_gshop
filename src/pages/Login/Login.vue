@@ -26,12 +26,14 @@
               <a href="javascript:;">《用户服务协议》</a>
             </section>
           </div>
+
           <div :class="{on: !loginWay}">
             <section>
               <section class="login_message">
                 <input type="text" maxlength="11" placeholder="手机/邮箱/用户名" v-model="name">
               </section>
               <section class="login_verification">
+                <!-- v-if：当表达式结果为 true 时，会占据页面的位置 -->
                 <input type="text" maxlength="8" placeholder="密码" v-if="showPwd" v-model="pwd">
                 <input type="password" maxlength="8" placeholder="密码" v-else v-model="pwd">
                 <div class="switch_button" :class="showPwd?'on':'off'" @click="showPwd=!showPwd">
@@ -80,6 +82,7 @@
 
     computed: {
       rightPhone () {
+        // 正则验证
         return /^1\d{10}$/.test(this.phone)
       }
     },
@@ -113,15 +116,14 @@
             }
           }
         }
-
-
-
       },
 
+      // 显示提示框
       showAlert(alertText) {
         this.alertShow = true
         this.alertText = alertText
       },
+
       // 异步登陆
       async login () {
         let result
@@ -181,11 +183,13 @@
           this.showAlert(msg)
         }
       },
+
       // 关闭警告框
       closeTip () {
         this.alertShow = false
         this.alertText = ''
       },
+
       // 获取一个新的图片验证码
       getCaptcha () {
         // 每次指定的src要不一样

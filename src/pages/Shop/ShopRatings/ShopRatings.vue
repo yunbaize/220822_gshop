@@ -78,13 +78,13 @@
   import Star from '../../../components/Star/Star.vue'
 
   export default {
-
     data () {
       return {
         onlyShowText: true, // 是否只显示有文本的
         selectType: 2 , // 选择的评价类型: 0满意, 1不满意, 2全部
       }
     },
+    
     mounted () {
       this.$store.dispatch('getShopRatings', () => {
         this.$nextTick(() => {

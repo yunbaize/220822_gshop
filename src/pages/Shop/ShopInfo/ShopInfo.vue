@@ -58,8 +58,8 @@
 <script>
   import BScroll from 'better-scroll'
   import {mapState} from 'vuex'
-  export default {
 
+  export default {
     data () {
       return {
         supportClasses: ['activity-green', 'activity-red', 'activity-orange']
@@ -82,6 +82,8 @@
     methods: {
       _initScroll () {
         new BScroll('.shop-info')
+
+        
         // 动态计算ul的宽度
         const ul = this.$refs.picsUl
         const liWidth = 120
