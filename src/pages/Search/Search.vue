@@ -1,10 +1,12 @@
 <template>
   <section class="search">
     <HeaderTop title="搜索"/>
+
     <form class="search_form" @submit.prevent="search">
       <input type="search" placeholder="请输入商家名称" class="search_input" v-model="keyword">
       <input type="submit" class="search_submit">
     </form>
+    
     <section class="list" v-if="!noSearchShops">
       <ul class="list_container">
         <!--:to="'/shop?id='+item.id"-->

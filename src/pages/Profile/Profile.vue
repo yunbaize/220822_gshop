@@ -1,6 +1,7 @@
 <template>
   <section class="profile">
     <HeaderTop title="我的"/>
+
     <section class="profile-number">
       <router-link :to="userInfo._id ? '/userinfo': '/login'" class="profile-link">
         <div class="profile_image">
@@ -9,9 +10,9 @@
         <div class="user-info">
           <p class="user-info-top" v-if="!userInfo.phone">{{userInfo.name || '登录/注册'}}</p>
           <p>
-                <span class="user-icon">
-                  <i class="iconfont icon-shouji icon-mobile"></i>
-                </span>
+            <span class="user-icon">
+              <i class="iconfont icon-shouji icon-mobile"></i>
+            </span>
             <span class="icon-mobile-number">{{userInfo.phone || '暂无绑定手机号'}}</span>
           </p>
         </div>
@@ -20,6 +21,7 @@
         </span>
       </router-link>
     </section>
+
     <section class="profile_info_data border-1px">
       <ul class="info_data_list">
         <a href="javascript:" class="info_data_link">
@@ -36,7 +38,9 @@
         </a>
       </ul>
     </section>
+
     <section class="profile_my_order border-1px">
+
       <!-- 我的订单 -->
       <a href='javascript:' class="my_order">
             <span>
@@ -49,6 +53,7 @@
               </span>
         </div>
       </a>
+
       <!-- 积分商城 -->
       <a href='javascript:' class="my_order">
             <span>
@@ -61,6 +66,7 @@
               </span>
         </div>
       </a>
+
       <!-- 硅谷外卖会员卡 -->
       <a href="javascript:" class="my_order">
             <span>
@@ -75,6 +81,7 @@
       </a>
     </section>
     <section class="profile_my_order border-1px">
+
       <!-- 服务中心 -->
       <a href="javascript:" class="my_order">
             <span>
@@ -98,7 +105,9 @@
 <script>
   import {mapState} from 'vuex'
   import { MessageBox, Toast } from 'mint-ui'
+
   import HeaderTop from '../../components/HeaderTop/HeaderTop.vue'
+  
   export default {
     computed: {
       ...mapState(['userInfo'])

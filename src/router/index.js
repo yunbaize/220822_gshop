@@ -31,6 +31,7 @@ export default new VueRouter({
       path: '/msite',
       component: MSite, // 返回路由组件的函数, 只有执行此函数才会加载路由组件, 这个函数在请求对应的路由路径时才会执行
       meta: {
+        // 控制footer的显示与隐藏
         showFooter: true
       }
     },
@@ -59,6 +60,7 @@ export default new VueRouter({
       path: '/',
       redirect: '/msite'
     },
+    
     {
       path: '/login',
       component: Login

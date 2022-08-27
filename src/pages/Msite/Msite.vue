@@ -2,6 +2,7 @@
   <section class="msite">
     <!--首页头部-->
     <HeaderTop :title="address.name">
+      <!-- <router-link>组件支持用户在具有路由功能的应用中点击导航，通过to属性指定目标地址 -->
       <router-link class="header_search" slot="left" to="/search">
         <i class="iconfont icon-sousuo"></i>
       </router-link>
@@ -18,6 +19,7 @@
     
     <div class="miste-content-wrapper">
       <div class="miste-content">
+
         <!--首页导航-->
         <nav class="msite_nav">
           <div class="swiper-container" v-if="categorys.length">
@@ -30,13 +32,15 @@
                   <span>{{category.title}}</span>
                 </a>
               </div>
-
             </div>
+
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
           </div>
+
           <img src="./images/msite_back.svg" alt="back" v-else>
         </nav>
+
         <!--首页附近商家-->
         <div class="msite_shop_list">
           <div class="shop_header">
@@ -45,6 +49,7 @@
           </div>
           <ShopList/>
         </div>
+
       </div>
     </div>
   </section>
@@ -67,13 +72,15 @@
         baseImageUrl: 'https://fuss10.elemecdn.com'
       }
     },
-    mounted () {
 
+    mounted () {
+      // 异步传值给vuex的mutation，改变state
       this.$store.dispatch('getCategorys')
       this.$store.dispatch('getShops')
     },
 
     computed: {
+      // mapState辅助函数, 可以快速引入store中的值
       ...mapState(['address', 'categorys', 'userInfo']),
 
       /*
@@ -99,7 +106,6 @@
           // 将当前分类保存到小数组中
           minArr.push(c)
         })
-
         return arr
       }
     },
@@ -128,7 +134,7 @@
               el: '.swiper-pagination',
             },
           })
-
+          // 创建一个BScroll实例对象, 来实现滚动
           new BScroll('.miste-content-wrapper', {
             click: true
           })

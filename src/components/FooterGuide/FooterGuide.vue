@@ -31,6 +31,8 @@
   export default {
     methods:{
       goTo(path){
+        // $route对象表示当前的路由信息，包含了当前 URL 解析得到的信息。包含当前的路径，参数，query对象等
+        // $router对象是全局路由的实例，是router构造方法的实例。
         this.$router.replace(path)
       }
     }
